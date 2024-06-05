@@ -11,10 +11,12 @@ const MovieCard = ({ movie }: Props) => {
       borderColor="gray.200"
       borderRadius="6px"
       overflow="hidden"
-      maxWidth={200}
+      maxWidth={400}
+      width="100%"
     >
       <Image
-        boxSize="200px"
+        boxSize="400px"
+        height="auto"
         objectFit="cover"
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         alt={movie.title}
