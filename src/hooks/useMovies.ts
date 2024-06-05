@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import apiClient from "../Services/api-Client";
 import { CanceledError } from "axios";
 
-interface Movie {
+ export interface Movie {
   adult: boolean;
   backdrop_path: string;
   genre_ids: number[];
@@ -43,10 +43,10 @@ const useMovies = () => {
       .catch((error) => {
         // TO CHECK THE TYPE OF ERROR
         if (error instanceof CanceledError) return
-        setError(error.message);
+        setError(error.message)
       });
 
-    return () => controller.abort();
+    return () => controller.abort()
   }, []);
 
   return { Movies, error };
