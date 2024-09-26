@@ -42,7 +42,7 @@ const useMovies = () => {
       .then((response) => setMovies(response.data.results))
       .catch((error) => {
         // TO CHECK THE TYPE OF ERROR
-        if (error instanceof CanceledError) return
+        if (error instanceof CanceledError) return;
         setError(error.message)
       });
 

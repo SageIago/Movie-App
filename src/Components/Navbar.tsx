@@ -1,12 +1,28 @@
-import { HStack, Image} from "@chakra-ui/react"
-import logo from "../assets/ee94bbc9-6b20-4784-90cd-08e3ecd07a16.webp"
+import { Box, Container, Flex } from "@chakra-ui/react"
+import { Link } from "react-router-dom"
 import ColorModeSwitch from "./ColorModeSwitch"
+
 const Navbar = () => {
   return (
-    <HStack justifyContent="space-between" padding="10px">
-    <Image src={logo} boxSize="60px" borderRadius="5px"/>
-    <ColorModeSwitch />
-    </HStack>
+   <Box mb={2} py={4}>
+    <Container maxW="container.xl">
+      <Flex justifyContent={"space-between"}>
+        <Link to={"/"}>
+          <Box fontFamily={"Inter, sans-serif"} fontSize={"2xl"} fontWeight={"bold"}>
+            MOVIFY
+          </Box>
+        </Link>
+
+        <Flex>
+        <Link to={"/"}>Home</Link>
+        <Link to={"/movies"}>Movies</Link>
+        <Link to={"/shows"}>TV Shows</Link>
+        <Link to={"/search"}>Search</Link>
+        <ColorModeSwitch />
+        </Flex>
+      </Flex>
+    </Container>
+   </Box>
   )
 }
 
